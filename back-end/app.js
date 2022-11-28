@@ -27,6 +27,6 @@ app.use((req, res, next) => {
 
 
 //Enregistrement routes 
-app.use('/api/saucemodel', RoutesDemand)
+app.use('/api/sauces', RoutesDemand)
 app.use('/api/auth', UserRoute)
 module.exports = app;

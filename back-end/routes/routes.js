@@ -10,7 +10,7 @@ const controller = require('../controllers/controller')
 
 router.get('/', auth, controller.GetAllObjet)
 router.post('/', auth, controller.CreateNewObjects)
-router.get('/:id', auth, controller.GetOneObjet);
+router.get('/:id', auth, controller.GetOneObjet)
 router.put('/:id', auth, controller.ModifyObjet)
 router.delete('/:id', auth, controller.DeleteObjet)
 
