@@ -14,6 +14,7 @@ router.post('/', auth, multer, controller.CreateNewObjects)
 router.get('/:id', auth, controller.GetOneObjet)
 router.put('/:id', auth, multer, controller.ModifyObjet)
 router.delete('/:id', auth, controller.DeleteObjet)
+router.post('/:id/like', auth, controller.like)
 
 
 module.exports = router

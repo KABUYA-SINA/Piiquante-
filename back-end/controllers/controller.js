@@ -5,7 +5,7 @@ const fs = require('fs')
 
 exports.GetAllObjet = (req, res, next) => {
     Sauce.find()
-        .then(sauces => res.status(200).json(sauces)) //-------------------------------------------------{}
+        .then(sauces => res.status(200).json(sauces)) 
         .catch(error => res.status(400).json({ error }));
 }
 exports.CreateNewObjects = (req, res, next) => {
@@ -22,13 +22,13 @@ exports.CreateNewObjects = (req, res, next) => {
         usersDisliked: []
     })
     sauce.save()
-        .then(() => res.status(201).json({ message: 'Objet enregistré !' }))
+        .then(() => res.status(201).json({ message: 'Registered item !' }))
         .catch(error => res.status(400).json({ error }));
 }
 
 exports.GetOneObjet = (req, res, next) => {
     Sauce.findOne({ _id: req.params.id })
-        .then(sauce => res.status(200).json( sauce ))  //-------------------------------------------------{}
+        .then(sauce => res.status(200).json( sauce ))  
         .catch(error => res.status(404).json({ error }));
 }
 
@@ -65,7 +65,7 @@ exports.DeleteObjet = (req, res, next) => {
                 const filename = sauce.imageUrl.split('/images/')[1];
                 fs.unlink(`images/${filename}`, () => {
                     Sauce.deleteOne({ _id: req.params.id })
-                        .then(() => { res.status(200).json({ message: 'Objet supprimé !' }) })
+                        .then(() => { res.status(200).json({ message: 'Item deleted !' }) })
                         .catch(error => res.status(401).json({ error }));
                 });
             }
@@ -76,3 +76,38 @@ exports.DeleteObjet = (req, res, next) => {
 };
 
 
+exports.like = (req, res, next) =>{
+    Sauce.findOne({ _id: req.params.id })
+        .then(sauce => {
+            let Likes = req.body.like 
+            let userId = req.body.userId
+            let message = ""
+            if(Likes === 1){
+                sauce.usersLiked.push(userId)
+                message = 'likes'
+            }else if(Likes === -1){
+                sauce.usersDisliked.push(userId)
+                message = 'Dislikes'
+            }else if(Likes === 0){
+                if(sauce.usersLiked.includes(userId)){
+                    const userIdIndex = sauce.usersLiked.indexOf(userId)
+                    sauce.usersLiked.splice(userIdIndex, 1)
+                    message = 'like cancelled !'
+                }
+                if (sauce.usersDisliked.includes(userId)) {
+                    const userIdIndex = sauce.usersDisliked.indexOf(userId)
+                    sauce.usersDisliked.splice(userIdIndex, 1)
+                    message = 'Dislike cancelled !'
+                }
+            }
+            sauce.likes = sauce.usersLiked.length
+            sauce.Disliked = sauce.usersDisliked.length
+            sauce.save()
+                .then(() => { res.status(200).json({ message: `The user has ${message}`}) })
+                .catch(error => res.status(401).json({ error }))
+        })
+        .catch(error => {
+            res.status(500).json({ error });
+        });
+
+}
