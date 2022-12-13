@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const uniqueValidator = require('mongoose-unique-validator')
-//const { use } = require('../app')
+
 
 
 const userShema = mongoose.Schema({

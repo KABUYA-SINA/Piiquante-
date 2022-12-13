@@ -2,7 +2,6 @@ const Sauce = require('../models/saucemodel')
 const fs = require('fs')
 
 
-
 exports.GetAllObjet = (req, res, next) => {
     Sauce.find()
         .then(sauces => res.status(200).json(sauces)) 
