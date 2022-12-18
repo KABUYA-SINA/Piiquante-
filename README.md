@@ -21,4 +21,4 @@ Ou
 
 - Lancer le terminal intégré click droit sur le dossier **Back-end** puis - Cliqué sur Ouvrir le terminal intégré
 
-En suite **NPM** **NODEMON** **SERVER**
+En suite **NODEMON** **SERVER**
