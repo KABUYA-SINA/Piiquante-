@@ -1,7 +1,5 @@
 const jwt = require('jsonwebtoken')
 
-
-
 //RECUPERATION DU TOKEN  en sachant [0] contient bearer et [1] token en string 
 module.exports = (req, res, next) => {
     try {

@@ -7,7 +7,7 @@ const auth = require('../middleware/auth')
 const multer = require('../middleware/multer-config')
 
 //verifie les routes 
-const controller = require('../controllers/controller')
+const controller = require('../controllers/sauce')
 
 router.get('/', auth, controller.GetAllObjet)
 router.post('/', auth, multer, controller.CreateNewObjects)
