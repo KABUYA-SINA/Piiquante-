@@ -1,27 +1,83 @@
-# Piiquante-
+# 🌶️ Piiquante — Sauce Review App
 
-Pour ce qui concerne le lancement du projet :
+Application web permettant de partager et noter des sauces piquantes.
 
-Côté **Front-end**
-Se positionner sur le dossier **Front-end**
+---
 
-* si on est sur le master CD **Front-end** en suite **NPM** **RUN** **START**
+## 🚀 Description
 
+**Piiquante** est une plateforme de critique de sauces piquantes où les utilisateurs peuvent publier, consulter et évaluer différentes sauces via un système de likes et dislikes.
 
-Ou
+Le projet intègre une API sécurisée et pose les bases d’une future évolution vers une plateforme e-commerce.
 
-* Lancer le terminal intégré click droit sur le dossier **Front-end** puis - Cliqué sur Ouvrir le terminal intégré
-  En suite **NPM** **RUN** **START**
+---
 
-Pour notre **Back-end**, on utilise le même cheminement, c'est-à-dire.
+## 🎯 Objectifs du projet
 
-Côté **Back-end**
-Se positionner sur le dossier **Back-end**
+* Développer une API sécurisée avec authentification utilisateur
+* Permettre la création et la consultation de contenus (CRUD)
+* Implémenter un système de likes/dislikes
+* Sécuriser les données utilisateurs
+* Structurer une application fullstack
 
-- si on est sur le master CD **Back-end** en suite **NODEMON** **SERVER**
+---
 
-Ou
+## 🛠️ Technologies utilisées
 
-- Lancer le terminal intégré click droit sur le dossier **Back-end** puis - Cliqué sur Ouvrir le terminal intégré
+* Node.js
+* Express.js
+* MongoDB (Mongoose)
+* JavaScript
+* API REST
 
-En suite **NODEMON** **SERVER**
+---
+
+## ⚙️ Fonctionnalités
+
+* 🔐 Authentification utilisateur sécurisée
+* 🌶️ Ajout de sauces
+* 📸 Upload d’images
+* 👍 Système de likes/dislikes
+* 📄 Consultation des sauces
+* 🔒 API sécurisée (hash password, validation)
+
+---
+
+## 📂 Structure du projet
+
+```
+📁 backend/
+ ├── 📁 controllers/
+ ├── 📁 models/
+ ├── 📁 routes/
+ ├── 📁 middleware/
+ └── server.js
+ └── app.js
+```
+
+---
+
+## 🧠 Compétences développées
+
+* Développement backend avec Node.js
+* Création d’API REST sécurisée
+* Gestion de base de données MongoDB
+* Authentification et sécurité (bcrypt, JWT)
+* Architecture MVC
+
+---
+
+## 🌐 Dépôt
+
+👉 https://github.com/KABUYA-SINA/Piiquante-
+
+---
+
+## 👨‍💻 Auteur
+
+**Sina Kabuya**
+
+* GitHub : https://github.com/KABUYA-SINA
+* Portfolio : https://kabuya-sina.github.io/Portfolio-SK/
+
+---
